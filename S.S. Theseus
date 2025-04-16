@@ -1,0 +1,161 @@
+## The Ship of Theseus thought experiment, introduced by Plutarch, explores whether a ship that has had all its parts replaced, even one at a time, remains the same ship. 
+
+
+string = "The Ship of Theseus"
+for i in range(len(string)):
+    print(string[:len(string) - i]) #This slicing takes the portion of the string from the beginning up to a length that decreases with each iteration.
+for i in range(1, len(string) + 1): #this adds letter back in.
+    print(string[:i])
+
+
+## outcome
+
+The Ship of Theseus
+The Ship of Theseu
+The Ship of These
+The Ship of Thes
+The Ship of The
+The Ship of Th
+The Ship of T
+The Ship of 
+The Ship of
+The Ship o
+The Ship 
+The Ship
+The Shi
+The Sh
+The S
+The 
+The
+Th
+T
+T
+Th
+The
+The 
+The S
+The Sh
+The Shi
+The Ship
+The Ship 
+The Ship o
+The Ship of
+The Ship of 
+The Ship of T
+The Ship of Th
+The Ship of The
+The Ship of Thes
+The Ship of These
+The Ship of Theseu
+The Ship of Theseus
+
+
+
+
+#taking out one letter randomly at a time and placing back in randomly
+
+import random  
+
+string = "The Ship of Theseus"
+print(string)
+string = list(string)
+
+while string:
+    # Randomly select a letter to remove
+    random_index = random.randint(0, len(string) - 1)
+    removed_letter = string.pop(random_index)
+    print(f"{''.join(string)}")
+
+original_string = "The Ship of Theseus"
+letters_with_positions = list(enumerate(original_string))
+random.shuffle(letters_with_positions)  # Shuffle the list randomly
+
+# Remove letters randomly and print the removal process
+removed_letters = []
+for position, letter in letters_with_positions:
+    removed_letters.append((position, letter))
+    print(f"{''.join([l for _, l in sorted(removed_letters[:-1])])}")
+
+# Add letters back to their original positions
+restored_string = [''] * len(original_string)  # Create a placeholder list
+for position, letter in sorted(removed_letters):  # Sort by original positions
+    restored_string[position] = letter
+    print(f"{join(restored_string)}")
+    
+string = "The Ship of Theseus"
+print(string)
+
+
+The Ship of Theseus
+The Ship ofTheseus
+The Shp ofTheseus
+The Shp oTheseus
+Te Shp oTheseus
+Te Shp oThesus
+TeShp oThesus
+TeShp ohesus
+TeShp oheus
+TeShp ohus
+TeShpohus
+TeShphus
+TeShhus
+TShhus
+TShus
+TShs
+TSh
+Sh
+S
+
+
+e
+eT
+e T
+e  T
+he  T
+he  Te
+he  Tes
+he  Tees
+he S Tees
+he So Tees
+he So Thees
+The So Thees
+The Sof Thees
+The Shof Thees
+The Shpof Thees
+The Shpof Theeus
+The Shipof Theeus
+The Ship of Theseus
+
+
+
+# from https://emojicombos.com/pirate-ship-dot-art
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠤⠴⠶⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣾⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠂⠉⡇⠀⠀⠀⢰⣿⣿⣿⣿⣧⠀⠀⢀⣄⣀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢠⣶⣶⣷⠀⠀⠀⠸⠟⠁⠀⡇⠀⠀⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠘⠟⢹⣋⣀⡀⢀⣤⣶⣿⣿⣿⣿⣿⡿⠛⣠⣼⣿⡟⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣴⣾⣿⣿⣿⣿⢁⣾⣿⣿⣿⣿⣿⣿⡿⢁⣾⣿⣿⣿⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿⣿⣿⠿⠇⠀⠀⠀⠀
+⠀⠀⠀⠳⣤⣙⠟⠛⢻⠿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣇⠘⠉⠀⢸⠀⢀⣠⠀⠀⠀
+⠀⠀⠀⠀⠈⠻⣷⣦⣼⠀⠀⠀⢻⣿⣿⠿⢿⡿⠿⣿⡄⠀⠀⣼⣷⣿⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣶⣄⡈⠉⠀⠀⢸⡇⠀⠀⠉⠂⠀⣿⣿⣿⣧⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣷⣤⣀⣸⣧⣠⣤⣴⣶⣾⣿⣿⣿⡿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠛⠉⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
