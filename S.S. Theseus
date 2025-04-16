@@ -128,6 +128,26 @@ The Ship of Theseus
 
 
 
+# A continuous loop of removing and replacing letters.
+
+import time
+
+string = "The Ship of Theseus"
+print(string)
+
+characters = list(string)
+
+while True: 
+    for i in range(len(characters)):
+        removed_char = characters[i]
+        characters[i] = ''  
+        print(''.join(characters))  
+        characters[i] = removed_char
+        print(''.join(characters))  
+
+
+
+
 # from https://emojicombos.com/pirate-ship-dot-art
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠤⠴⠶⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣾⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -143,19 +163,3 @@ The Ship of Theseus
 ⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠛⠉⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
