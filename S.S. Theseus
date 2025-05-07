@@ -1,15 +1,16 @@
 ## The Ship of Theseus thought experiment, introduced by Plutarch, explores whether a ship that has had all its parts replaced, even one at a time, 
 ## remains the same ship. 
 
+# Consecutive letter removal
 
 string = "The Ship of Theseus"
-for i in range(len(string)):
+for i in range(len(string)): #forloop, iteration in range which is equal to the length of the string
     print(string[:len(string) - i]) #This slicing takes the portion of the string from the beginning up to a length that decreases with each iteration.
 for i in range(1, len(string) + 1): #this adds letter back in.
     print(string[:i])
 
 
-## outcome
+# outcome
 
 The Ship of Theseus
 The Ship of Theseu
@@ -53,16 +54,16 @@ The Ship of Theseus
 
 
 
-#taking out one letter randomly at a time and placing back in randomly
+#Random letter removal and replacement
 
 import random  
 
 string = "The Ship of Theseus"
 print(string)
-string = list(string)
+string = list(string) #convert to list for mutablity 
 
+  # Randomly select a letter to remove
 while string:
-    # Randomly select a letter to remove
     random_index = random.randint(0, len(string) - 1)
     removed_letter = string.pop(random_index)
     print(f"{''.join(string)}")
@@ -86,7 +87,7 @@ for position, letter in sorted(removed_letters):  # Sort by original positions
 string = "The Ship of Theseus"
 print(string)
 
-## outcome
+## outcome example
 
 The Ship of Theseus
 The Ship ofTheseus
@@ -130,7 +131,7 @@ The Ship of Theseus
 
 
 
-# A continuous loop of removing and replacing letters.
+# outcome - A continuous loop of removing and replacing letters.
 
 import time
 
